@@ -29,10 +29,10 @@ function default_1(appPath, config) {
         }));
     }
     else {
-        plugin.htmlWebpackPlugin = chain_1.getHtmlWebpackPlugin([{
-                filename: 'index.html',
-                template: path.join(appPath, sourceRoot, 'index.html')
-            }]);
+        // plugin.htmlWebpackPlugin = getHtmlWebpackPlugin([{
+        //   filename: 'index.html',
+        //   template: path.join(appPath, sourceRoot, 'index.html')
+        // }])
     }
     plugin.definePlugin = chain_1.getDefinePlugin([chain_1.processEnvOption(env), defineConstants]);
     const isCssoEnabled = (csso && csso.enable === false)

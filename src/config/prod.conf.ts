@@ -81,10 +81,10 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
       }])
     }))
   } else {
-    plugin.htmlWebpackPlugin = getHtmlWebpackPlugin([{
-      filename: 'index.html',
-      template: path.join(appPath, sourceRoot, 'index.html')
-    }])
+    // plugin.htmlWebpackPlugin = getHtmlWebpackPlugin([{
+    //   filename: 'index.html',
+    //   template: path.join(appPath, sourceRoot, 'index.html')
+    // }])
   }
 
   plugin.definePlugin = getDefinePlugin([processEnvOption(env), defineConstants])
