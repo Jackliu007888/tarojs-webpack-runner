@@ -84,7 +84,14 @@ function default_1(appPath, config) {
         optimization: {
             minimizer,
             splitChunks: {
-                name: false
+                cacheGroups: {
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: "vendors",
+                        priority: -20,
+                        chunks: "all"
+                    }
+                }
             }
         }
     });

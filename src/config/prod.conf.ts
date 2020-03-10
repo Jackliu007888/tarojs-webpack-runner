@@ -145,7 +145,14 @@ export default function (appPath: string, config: Partial<BuildConfig>): any {
     optimization: {
       minimizer,
       splitChunks: {
-        name: false
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: "vendors",
+            priority: -20,
+            chunks: "all"
+          }
+        }
       }
     }
   })
